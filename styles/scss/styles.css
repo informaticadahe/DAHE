@@ -108,15 +108,15 @@ section {
 
 /* RESPONSIVE */
 @media screen and (max-width: 767px) and (orientation: portrait) {
-  /* .pc {
+   #circle.pc {
     display: none;
-  } */
-/* 
-  .cell {
+  } 
+
+   #circle.cell {
     display: block;
 
     height: 100vh;
-  } */
+  }
 
 #background,
 #background2 {
@@ -129,16 +129,16 @@ section {
 }
 
 @media screen and (max-width: 767px) and (orientation: landscape) {
- /*  .pc {
+    #circle.pc {
     display: none;
-  } */
+  } 
 
-/*   .cell {
+   #circle.cell {
     display: block;
 
     height: 100vh;
   }
- */#background,
+#background,
 #background2 {
   height: auto;
 }
