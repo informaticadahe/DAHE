@@ -39,17 +39,19 @@ body {
   display: none;
 }
 
-#background,#background2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    width: 100%;
-    height: 100%;
-    background-size: cover; /* Asegura que las imágenes cubran toda la pantalla */
-    background-position: center;
-    z-index: 1;
-    transition: opacity 0.3s ease-out, background-image 0.3s ease-in-out;
+#background,
+#background2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  /* Asegura que las imágenes cubran toda la pantalla */
+  background-position: center;
+  z-index: 1;
+  transition: opacity 0.3s ease-out, background-image 0.3s ease-in-out;
 }
 
 #circle {
@@ -105,24 +107,42 @@ section {
 
 
 /* RESPONSIVE */
-@media screen and (max-width: 767px) {
-  .pc {
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  /* .pc {
     display: none;
-  }
-
+  } */
+/* 
   .cell {
     display: block;
 
-    height: 100vh;/* 
-    overflow-y: scroll; */
-  }
+    height: 100vh;
+  } */
 
 
 
   #title {
-    font-size: 5rem; 
+    font-size: 5rem;
   }
 }
+
+@media screen and (max-width: 767px) and (orientation: landscape) {
+ /*  .pc {
+    display: none;
+  } */
+
+/*   .cell {
+    display: block;
+
+    height: 100vh;
+  }
+ */
+
+
+  #title {
+    font-size: 5rem;
+  }
+}
+
 .arrow-down {
   position: absolute;
   bottom: 30px;
@@ -139,12 +159,19 @@ section {
 
 /* Animación tipo rebote */
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateX(-50%) translateY(0);
   }
+
   40% {
     transform: translateX(-50%) translateY(-10px);
   }
+
   60% {
     transform: translateX(-50%) translateY(-5px);
   }
