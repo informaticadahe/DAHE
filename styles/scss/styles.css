@@ -146,10 +146,16 @@ section {
     font-size: 5rem;
   }
 }
-
+.circulo-cell{
+  width: 90px;
+  height: auto;
+  position: fixed;
+  align-items: center;
+  z-index: 4;
+}
 .arrow-down {
   position: absolute;
-  bottom: 30px;
+  bottom: 3dvh;
   left: 50%;
   transform: translateX(-50%);
   font-size: 3rem;
