@@ -118,7 +118,10 @@ section {
     height: 100vh;
   } */
 
-
+#background,
+#background2 {
+  height: auto;
+}
 
   #title {
     font-size: 5rem;
@@ -135,9 +138,10 @@ section {
 
     height: 100vh;
   }
- */
-
-
+ */#background,
+#background2 {
+  height: auto;
+}
   #title {
     font-size: 5rem;
   }
