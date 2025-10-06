@@ -39,14 +39,26 @@ body {
   display: none;
 }
 
-#background,
-#background2 {
+#cellBackground {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   width: 100%;
-  height: 100%;
+  /* Asegura que las imágenes cubran toda la pantalla */
+  background-position: center;
+  z-index: 1;
+  transition: opacity 0.3s ease-out, background-image 0.3s ease-in-out;
+}
+
+#background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 100dvw;
+  height: auto;
+
   background-size: cover;
   /* Asegura que las imágenes cubran toda la pantalla */
   background-position: center;
@@ -60,8 +72,8 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 0;
-  width: 100%;
-  height: 100%;
+  width: 100dvw;
+  height: auto;
   pointer-events: none;
 }
 
@@ -106,53 +118,125 @@ section {
 }
 
 
+
 /* RESPONSIVE */
 @media screen and (max-width: 767px) and (orientation: portrait) {
-   #circle.pc {
+  #circle.pc {
     display: none;
-  } 
-
-   #circle.cell {
-    display: block;
-
-    height: 100vh;
   }
 
-#background,
-#background2 {
-  height: auto;
-}
+  #circle.cell {
+    display: block;
+    aspect-ratio: 1080 / 1920;
+    /* 
+    width: 100dvw; */
+  }
+
+  #background,
+  #background2 {
+    display: none;
+  }
 
   #title {
     font-size: 5rem;
+  }
+
+  .circulo-cell {
+    display: block !important;
+  }
+
+  .pc {
+    display: none !important;
+    /* Oculta elementos de PC */
+  }
+
+  .cell {
+    display: block !important;
+    /* Muestra elementos móviles */
+  }
+
+  #cellBackground {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100dvw;
+    height: auto;
+    z-index: 1;
+  }
+
+  #title {
+    font-size: 5rem;
+  }
+
+  .circulo-cell {
+    display: block !important;
   }
 }
 
 @media screen and (max-width: 767px) and (orientation: landscape) {
-    #circle.pc {
+  #circle.pc {
     display: none;
-  } 
-
-   #circle.cell {
-    display: block;
-
-    height: 100vh;
   }
-#background,
-#background2 {
-  height: auto;
-}
+
+  #circle.cell {
+    display: block;
+    /* 
+
+    height: 100vh; */
+  }
+
+  #background {
+    display: none;
+  }
+
   #title {
     font-size: 5rem;
   }
+
+  .circulo-cell {
+    display: block !important;
+  }
+
+  .pc {
+    display: none !important;
+    /* Oculta elementos de PC */
+  }
+
+  .cell {
+    display: block !important;
+    /* Muestra elementos móviles */
+  }
+
+  #cellBackground {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100dvw;
+    height: auto;
+    z-index: 1;
+  }
+
+  #title {
+    font-size: 5rem;
+  }
+
+  .circulo-cell {
+    display: block !important;
+  }
+
 }
-.circulo-cell{
-  width: 90px;
+
+.circulo-cell {
+  width: 28VW;
   height: auto;
   position: fixed;
   align-items: center;
-  z-index: 4;
+  z-index: 2;
+  display: none;
 }
+
 .arrow-down {
   position: absolute;
   bottom: 3dvh;

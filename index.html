@@ -15,18 +15,16 @@
 </head>
 
 <body>
-    <section id="top" class="pc">
+    <section id="top">
         <img src="./multimedia/1.webp" id="background" alt="Fondo" class="pc">
-        <img src="./multimedia/3.webp" id="background2" alt="Fondo" class="cell">
+        <img src="./multimedia/3.webp" id="cellBackground" alt="Fondo" class="cell">
         <img src="./multimedia/2.webp" id="circle" alt="Círculo" class="pc">
         <img src="./multimedia/4.webp" id="circle" alt="Círculo" class="cell">
-        <img src="./multimedia/dahe.webp"  alt="Círculo" class="circulo-cell">
-
+        <img src="./multimedia/dahe.webp" alt="Círculo" class="circulo-cell">
         <h1 id="title">BIENVENIDOS</h1>
-
-        <!-- Flecha -->
         <a href="#ejemplo" class="arrow-down">&#x25BC;</a>
     </section>
+
 
     <main class="container" id="ejemplo">
         <h2>RESEÑA HISTÓRICA</h2>
@@ -93,8 +91,8 @@
         <p>Más contenido de prueba...</p>
     </section>
 
-    <script>
-        
+    <!--  <script>
+
         const background = document.getElementById('background');
         const title = document.getElementById('title');
         const topSection = document.getElementById('top');
@@ -132,51 +130,51 @@
                 topSection.style.visibility = "visible"; // reaparece al subir
             }
         });
-/*         const isMobile = window.innerWidth <= 767;
-
-        if (isMobile) {
-            loadMobileScrollEffect();
-        } else {
-            loadPcScrollEffect();
-        }
-
-        function loadPcScrollEffect() {
-            const background = document.getElementById('background');
-            const title = document.getElementById('title');
-            const topSection = document.getElementById('top');
-
-            window.addEventListener('scroll', () => {
-                let scroll = window.scrollY;
-                let scale = 1 + scroll / 200;
-                if (scale > 10) scale = 10;
-                if (scale < 1) scale = 1;
-
-                background.style.transform = `translate(-50%, -50%) scale(${scale})`;
-
-                if (scale > 4) {
-                    background.style.opacity = `${Math.max(0, 1 - (scale - 4) / 2)}`;
+        /*         const isMobile = window.innerWidth <= 767;
+        
+                if (isMobile) {
+                    loadMobileScrollEffect();
                 } else {
-                    background.style.opacity = 1;
+                    loadPcScrollEffect();
                 }
-
-                if (scale >= 6) {
-                    title.style.opacity = 1;
-                } else {
-                    title.style.opacity = 0;
+        
+                function loadPcScrollEffect() {
+                    const background = document.getElementById('background');
+                    const title = document.getElementById('title');
+                    const topSection = document.getElementById('top');
+        
+                    window.addEventListener('scroll', () => {
+                        let scroll = window.scrollY;
+                        let scale = 1 + scroll / 200;
+                        if (scale > 10) scale = 10;
+                        if (scale < 1) scale = 1;
+        
+                        background.style.transform = `translate(-50%, -50%) scale(${scale})`;
+        
+                        if (scale > 4) {
+                            background.style.opacity = `${Math.max(0, 1 - (scale - 4) / 2)}`;
+                        } else {
+                            background.style.opacity = 1;
+                        }
+        
+                        if (scale >= 6) {
+                            title.style.opacity = 1;
+                        } else {
+                            title.style.opacity = 0;
+                        }
+        
+                        if (scale >= 8) {
+                            topSection.style.opacity = 0;
+                            topSection.style.visibility = "hidden";
+                        } else {
+                            topSection.style.opacity = 1;
+                            topSection.style.visibility = "visible";
+                        }
+                    });
                 }
-
-                if (scale >= 8) {
-                    topSection.style.opacity = 0;
-                    topSection.style.visibility = "hidden";
-                } else {
-                    topSection.style.opacity = 1;
-                    topSection.style.visibility = "visible";
-                }
-            });
-        } */
-/* 
+         */
         function loadMobileScrollEffect() {
-            const background = document.getElementById('background2');
+            const background = document.getElementById('cellBackground');
             const title = document.getElementById('title');
             const topSection = document.getElementById('top');
 
@@ -208,10 +206,56 @@
                     topSection.style.visibility = "visible";
                 }
             });
-        } */
-    </script>
+        } const isMobile = window.innerWidth <= 767;
+        if (isMobile) {
+            loadMobileScrollEffect();
+        }
+
+    </script> -->
     <script>
-       
+        const title = document.getElementById('title');
+        const topSection = document.getElementById('top');
+        const isMobile = window.innerWidth <= 767;
+
+        const background = isMobile
+            ? document.getElementById('cellBackground') // usa 3.webp en móvil
+            : document.getElementById('background');    // usa 1.webp en PC
+
+        window.addEventListener('scroll', () => {
+            let scroll = window.scrollY;
+            let scale = 1 + scroll / 200;
+            if (scale > 10) scale = 10;
+            if (scale < 1) scale = 1;
+
+            background.style.transform = `translate(-50%, -50%) scale(${scale})`;
+
+            // Efecto de desvanecimiento
+            if (scale > 4) {
+                background.style.opacity = `${Math.max(0, 1 - (scale - 4) / 2)}`;
+            } else {
+                background.style.opacity = 1;
+            }
+
+            // Título
+            if (scale >= 6) {
+                title.style.opacity = 1;
+            } else {
+                title.style.opacity = 0;
+            }
+
+            // Desaparecer sección top
+            if (scale >= 8) {
+                topSection.style.opacity = 0;
+                topSection.style.visibility = "hidden";
+            } else {
+                topSection.style.opacity = 1;
+                topSection.style.visibility = "visible";
+            }
+        });
+    </script>
+
+    <script>
+
         document.querySelector('.arrow-down').addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
@@ -248,4 +292,5 @@
         });
     </script>
 </body>
+
 </html>
