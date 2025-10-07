@@ -166,7 +166,7 @@ section {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100dvw;
-    height: auto;
+    height: 100dvh;
     z-index: 1;
   }
 
