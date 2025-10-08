@@ -13,11 +13,14 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
 body {
-  background: #162b4b;
+  background: #000335 ;
   overflow-x: hidden;
-  min-height: 300vh;
+}
+main {
+  background: linear-gradient(to bottom, #000335 20%, #1a2e56 80%);
+  overflow-x: hidden;
+  margin-top: 200dvh;
 }
 
 #top {
@@ -90,8 +93,8 @@ body {
   z-index: 3;
 }
 
-main {
-  background: #c7ad6e;
+.reseña {
+  background: #b59a55;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.423);
   backdrop-filter: blur(7.6px);
   font-size: larger;
@@ -101,7 +104,7 @@ main {
   margin: 2rem auto;
   border: 1px solid #0000005b;
   max-width: 800px;
-  margin-top: 250vh;
+  margin-top: 20vh;
   border-radius: 1rem;
   box-shadow: 1rem 1rem 15px #cccccc5b;
 }
