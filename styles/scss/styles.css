@@ -135,9 +135,10 @@ section {
 
   #circle.cell {
     display: block;
-    aspect-ratio: 1080 / 1920;
-    /* 
-    width: 100dvw; */
+    height: auto!important;
+    width: 250%!important;
+    transform: translate(-50%, -50%) scale(.5);
+    z-index: 1;
   }
 
   #background,
@@ -170,7 +171,7 @@ section {
     transform: translate(-50%, -50%);
     width: 100dvw;
     height: 100dvh;
-    z-index: 1;
+    z-index: 2;
   }
 
   #title {
@@ -193,6 +194,9 @@ section {
 
   #circle.cell {
     display: block;
+    aspect-ratio: 1080 / 1920;
+    height: auto!important;
+    width: auto!important;
     /* 
 
     height: 100vh; */
@@ -241,7 +245,7 @@ section {
 }
 
 .circulo-cell {
-  width: 28VW;
+  width: 30VW;
   height: auto;
   position: fixed;
   align-items: center;
