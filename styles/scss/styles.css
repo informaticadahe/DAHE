@@ -13,14 +13,16 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 body {
-  background: #000335 ;
+  background: #000335;
   overflow-x: hidden;
 }
+
 main {
   background: linear-gradient(to bottom, #000335 20%, #1a2e56 80%);
   overflow-x: hidden;
-  margin-top: 200dvh;
+  margin-top: 220dvh;
 }
 
 #top {
@@ -38,7 +40,8 @@ main {
   transition: opacity 1s ease-out, visibility 1s ease-out;
 }
 
-.cell {
+.cell,
+.pasto {
   display: none;
 }
 
@@ -121,7 +124,18 @@ section {
   font-size: larger;
 }
 
+#circle.cellTanque {
+  display: none;
+  width: 78% !important;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
 
+.pasto {
+  z-index: 3 !important;
+  transform: translate(-50%, -40%)scaleY(.9) !important;
+}
 
 /* RESPONSIVE */
 @media screen and (max-width: 767px) and (orientation: portrait) {
@@ -135,10 +149,14 @@ section {
 
   #circle.cell {
     display: block;
-    height: auto!important;
-    width: 250%!important;
-    transform: translate(-50%, -50%) scale(.5);
+    height: 100dvh !important;
+    transform: translate(-50%, -50%);
     z-index: 1;
+  }
+
+  #circle.cellTanque,
+  .pasto {
+    display: block;
   }
 
   #background,
@@ -150,9 +168,7 @@ section {
     font-size: 5rem;
   }
 
-  .circulo-cell {
-    display: block !important;
-  }
+
 
   .pc {
     display: none !important;
@@ -171,16 +187,14 @@ section {
     transform: translate(-50%, -50%);
     width: 100dvw;
     height: 100dvh;
-    z-index: 2;
+    z-index: 4;
   }
 
   #title {
     font-size: 5rem;
   }
 
-  .circulo-cell {
-    display: block !important;
-  }
+
 }
 
 @media screen and (max-width: 767px) and (orientation: landscape) {
@@ -195,11 +209,16 @@ section {
   #circle.cell {
     display: block;
     aspect-ratio: 1080 / 1920;
-    height: auto!important;
-    width: auto!important;
+    height: auto !important;
+    width: auto !important;
     /* 
 
     height: 100vh; */
+  }
+
+  #circle.cellTanque,
+  .pasto {
+    display: block;
   }
 
   #background {
@@ -210,9 +229,7 @@ section {
     font-size: 5rem;
   }
 
-  .circulo-cell {
-    display: block !important;
-  }
+
 
   .pc {
     display: none !important;
@@ -231,16 +248,13 @@ section {
     transform: translate(-50%, -50%);
     width: 100dvw;
     height: auto;
-    z-index: 1;
+    z-index: 4;
   }
 
   #title {
     font-size: 5rem;
   }
 
-  .circulo-cell {
-    display: block !important;
-  }
 
 }
 
