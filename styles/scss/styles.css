@@ -93,7 +93,7 @@ main {
   color: white;
   opacity: 0;
   transition: opacity 1s ease-in;
-  z-index: 3;
+  z-index: 5;
 }
 
 .reseña {
@@ -126,9 +126,9 @@ section {
 
 #circle.cellTanque {
   display: none;
-  width: 78% !important;
+  width: 130% !important;
   height: auto;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -49.3%);
   z-index: 1;
 }
 
@@ -155,8 +155,8 @@ section {
   }
 
   #circle.cellTanque,
-  .pasto {
-    display: block;
+  .pasto,.circulo-cell {
+    display: block!important;
   }
 
   #background,
@@ -217,8 +217,8 @@ section {
   }
 
   #circle.cellTanque,
-  .pasto {
-    display: block;
+  .pasto,.circulo-cell {
+    display: block!important;
   }
 
   #background {
@@ -263,7 +263,7 @@ section {
   height: auto;
   position: fixed;
   align-items: center;
-  z-index: 3;
+  z-index: 4;
   display: none;
 }
 
