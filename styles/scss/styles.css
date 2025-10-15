@@ -15,12 +15,12 @@
 }
 
 body {
-  background: #000335;
+  background: linear-gradient(to bottom, #000335 20%, #1a2e56 80%, #6592ea 100%);
   overflow-x: hidden;
 }
 
 main {
-  background: linear-gradient(to bottom, #000335 20%, #1a2e56 80%);
+  background: linear-gradient(to bottom, #000335 20%, #1a2e56 80%, #6592ea 100%);
   overflow-x: hidden;
   margin-top: 220dvh;
 }
@@ -52,7 +52,6 @@ main {
   transform: translate(-50%, -50%) scale(1);
   width: 100%;
   height: 100dvh;
-  /* Asegura que las imágenes cubran toda la pantalla */
   background-position: center;
   z-index: 1;
   transition: opacity 0.3s ease-out, background-image 0.3s ease-in-out;
@@ -155,8 +154,9 @@ section {
   }
 
   #circle.cellTanque,
-  .pasto,.circulo-cell {
-    display: block!important;
+  .pasto,
+  .circulo-cell {
+    display: block !important;
   }
 
   #background,
@@ -217,8 +217,9 @@ section {
   }
 
   #circle.cellTanque,
-  .pasto,.circulo-cell {
-    display: block!important;
+  .pasto,
+  .circulo-cell {
+    display: block !important;
   }
 
   #background {
@@ -299,4 +300,38 @@ section {
   60% {
     transform: translateX(-50%) translateY(-5px);
   }
+}
+
+#mainNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(12, 45, 72, 0.95);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  gap: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease-in-out;
+}
+
+#mainNav.visible {
+  transform: translateY(0);
+}
+
+#mainNav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease-in-out;
+}
+
+#mainNav a:hover {
+  color: #b8860b;
 }
