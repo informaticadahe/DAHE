@@ -613,7 +613,7 @@ section {
     padding: 3rem;
     border: 1px solid #0000005b;
     max-width: 800px;
-    margin: 2vh 0;
+    margin: 5vh 0;
     border-radius: 1rem;
     box-shadow: 1rem 1rem 15px #000000c5;
 
@@ -626,9 +626,15 @@ section {
       display: grid;
       grid-template-columns: 30% 70%;
     }
-    .divider{
+
+    .divider {
       margin: 2rem 0;
     }
+
+    img {
+      width: -webkit-fill-available;
+    }
+
     .body {
       padding: 1rem;
       display: flex;
@@ -656,8 +662,8 @@ section {
   .contactoContainer {
     margin: auto;
     z-index: 99;
-    background: #d58701;
     color: #ffffff;
+    background: linear-gradient(to bottom, #6592ea, #98bafc 100%);
 
     .barra {
       height: 3px;

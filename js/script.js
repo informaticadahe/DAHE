@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <li>
                             <a href="tel:4653-1818">
                                 <img src="https://img.icons8.com/ios-filled/50/phone.png" alt="phone">
-                                    4653-1818 / FAX: 4653-1774
+                                    4653-1818 
                             </a>
                         </li><!-- 
                         <li>
