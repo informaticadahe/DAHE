@@ -2,11 +2,9 @@
 
 * {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
   -webkit-box-sizing: border-box;
   text-align: justify;
@@ -19,10 +17,19 @@ body {
   overflow-x: hidden;
 }
 
-main {
+
+main.fondo {
   background: linear-gradient(to bottom, #000335 20%, #1a2e56 80%, #6592ea 100%);
   overflow-x: hidden;
   margin-top: 220dvh;
+}
+
+h2,
+h3 {
+  text-align: center;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+  font-size: xx-large;
 }
 
 #top {
@@ -96,12 +103,15 @@ main {
 }
 
 .reseña {
-  background: #b59a55;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.168);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.423);
-  backdrop-filter: blur(7.6px);
   font-size: larger;
-  letter-spacing: 0.125rem;
-  color: #000000;
+  color: #ffffff;
   padding: 3rem;
   margin: 2rem auto;
   border: 1px solid #0000005b;
@@ -111,11 +121,7 @@ main {
   box-shadow: 1rem 1rem 15px #cccccc5b;
 }
 
-h2 {
-  text-align: center;
-  font-weight: bolder;
-  margin-bottom: 2rem;
-}
+
 
 section {
   color: antiquewhite;
@@ -307,7 +313,7 @@ section {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(12, 45, 72, 0.95);
+  background: rgba(12, 45, 72, 0.982);
   color: white;
   display: flex;
   justify-content: center;
@@ -332,6 +338,326 @@ section {
   transition: color 0.2s ease-in-out;
 }
 
+/* 
 #mainNav a:hover {
   color: #b8860b;
+  font-weight: bold;
+  transition: transform 0.4s ease-in-out;
+  transform: scale(1.1);
+} */
+
+
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1em;
+  flex-wrap: wrap;
+  overflow: auto;
+  padding: 2em;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* SVG positioning */
+.svg-container {
+  position: absolute;
+}
+
+/* Card container */
+.card-container {
+  padding: 12px;
+  border-radius: 36px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out;
+  background: linear-gradient(-30deg,
+      var(--gradient-color),
+      transparent,
+      var(--gradient-color)),
+    linear-gradient(to bottom,
+      var(--color-neutral-900),
+      var(--color-neutral-900));
+
+  /*  &[↖️] {
+    --f: url(#🌀↖️);
+    --electric-border-color: rgb(30, 0, 255);
+    --electric-light-color: oklch(from var(--electric-border-color) l c h);
+    --gradient-color: oklch(from var(--electric-border-color) 0.3 calc(c / 2) h / 0.4);
+  }
+
+  &[🎨] {
+    --f: url(#🌀🎨);
+    --electric-border-color: #d2a125;
+    --electric-light-color: oklch(from var(--electric-border-color) l c h);
+    --gradient-color: oklch(from var(--electric-border-color) 0.3 calc(c / 2) h / 0.4);
+  } */
+
+}
+
+/* 
+.card-container:hover {
+  transform: scale(1.1);
+  overflow: hidden;
+}
+ */
+/* Inner container */
+.inner-container {
+  position: relative;
+}
+
+/* Border layers */
+.border-outer {
+  border: 2px solid oklch(from var(--electric-border-color) l c h / 0.5);
+  border-radius: 1.5em;
+}
+
+
+.main-card {
+  width: 22rem;
+  aspect-ratio: 7 / 10;
+  border-radius: 1.5em;
+  border: 2px solid var(--electric-border-color);
+  filter: var(--f);
+}
+
+/* Glow effects */
+.glow-layer-1 {
+  border: 2px solid oklch(from var(--electric-border-color) l c h / 0.6);
+  border-radius: 24px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: blur(1px);
+}
+
+.glow-layer-2 {
+  border: 2px solid var(--electric-light-color);
+  border-radius: 24px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: blur(4px);
+}
+
+/* Overlay effects */
+.overlay-1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  opacity: 1;
+  mix-blend-mode: overlay;
+  transform: scale(1.1);
+  filter: blur(16px);
+  background: linear-gradient(-30deg,
+      rgb(0, 0, 0),
+      transparent 30%,
+      transparent 70%,
+      rgb(0, 0, 0));
+}
+
+
+
+/* Background glow */
+.background-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  filter: blur(32px);
+  transform: scale(1.1);
+  opacity: 0.3;
+  z-index: -1;
+  background: linear-gradient(-30deg,
+      var(--electric-light-color),
+      transparent,
+      var(--electric-border-color));
+}
+
+/* Content container */
+.content-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Content sections */
+.content-top {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-end;
+
+  img {
+    mask-image: linear-gradient(to bottom, black 70%, transparent);
+    filter: drop-shadow(0 0 12px rgb(0, 0, 0));
+  }
+}
+
+.content-bottom {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em;
+  text-align-last: center;
+}
+
+/* Typography */
+.title {
+  font-size: 2.25em;
+  font-weight: 500;
+  align-self: center;
+}
+
+.description {
+  opacity: 0.75;
+}
+
+/* Divider */
+.divider {
+  margin-top: auto;
+  border: none;
+  height: 1px;
+  background-color: currentColor;
+  opacity: 0.5;
+  mask-image: linear-gradient(to right, transparent, black, transparent);
+  -webkit-mask-image: linear-gradient(to right,
+      transparent,
+      black,
+      transparent);
+}
+
+.ornamento-marco {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 3;
+}
+
+.ornamento-marco rect {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.5s ease;
+}
+
+/* Animación de dibujo */
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Animación de resplandor al finalizar */
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 0px blue);
+  }
+
+  50% {
+    filter: drop-shadow(0 0 12px blue);
+  }
+
+  100% {
+    filter: drop-shadow(0 0 4px rgb(0, 0, 0));
+  }
+}
+
+/* Estado visible: se dibuja y luego brilla */
+.card-visible .ornamento-marco rect {
+  animation: draw 4s ease forwards, glow 3s ease 3s forwards;
+}
+
+
+.footer {
+  /* 
+  margin: 10vh auto 0 0 !important; */
+  align-items: center;
+
+  .contactoContainer {
+    margin: auto;
+    z-index: 99;
+    background: #b87400;
+    color: #ffffff;
+
+    .barra {
+      height: 3px;
+      background: #ed7d31;
+      border: #ed7d31 1px solid;
+      padding: 0%;
+      margin: 15px;
+    }
+
+    div {
+      display: flex;
+      padding: clamp(10px, 5vw, 200px);
+      justify-content: space-around;
+
+      ul {
+        padding: 0 20px;
+
+        li {
+          list-style-type: none;
+          display: flex;
+          margin-bottom: 2dvh;
+          color: #ffffff;
+
+          a {
+            text-decoration: none;
+            color: inherit !important;
+            display: inline-flex;
+            width: 100%;
+            align-items: center;
+
+            p {
+              margin: 0;
+            }
+          }
+
+
+
+          img {
+            margin-right: 15px;
+            width: 30px;
+            height: 30px;
+            filter: invert(1);
+          }
+        }
+      }
+
+      iframe {
+        width: 50%;
+        height: clamp(200px, 33vh, 100%);
+        aspect-ratio: 4/3;
+        border-radius: 10px;
+      }
+    }
+  }
 }
