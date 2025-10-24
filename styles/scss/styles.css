@@ -503,6 +503,21 @@ section {
       transparent);
 }
 
+.dividerGRL {
+  margin-top: auto;
+  border: none;
+  height: 1px;
+  width: 50%;
+  margin: 3dvh auto;
+  background-color: white;
+  opacity: 0.5;
+  mask-image: linear-gradient(to right, transparent, rgb(255, 255, 255), transparent);
+  -webkit-mask-image: linear-gradient(to right,
+      transparent,
+      white,
+      transparent);
+}
+
 .ornamento-marco {
   position: absolute;
   top: 0;
