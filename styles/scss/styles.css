@@ -489,6 +489,7 @@ section {
 .description {
   opacity: 0.75;
 }
+
 .divider {
   margin-top: auto;
   border: none;
@@ -524,6 +525,7 @@ section {
     stroke-dashoffset: 0;
   }
 }
+
 @keyframes glow {
   0% {
     filter: drop-shadow(0 0 0px blue);
@@ -537,14 +539,20 @@ section {
     filter: drop-shadow(0 0 4px rgb(0, 0, 0));
   }
 }
+
 .card-visible .ornamento-marco rect {
   animation: draw 4s ease forwards, glow 3s ease 3s forwards;
 }
 
 #elementos {
   margin-top: 4vh;
+  padding: 0%;
+  width: 100%;
+  justify-items: center;
 
   .container {
+    width: clamp(30px, 80%, 900px);
+    margin: 5vh auto;
     background: rgba(255, 255, 255, 0.487);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -554,8 +562,6 @@ section {
     font-size: larger;
     padding: 1.5rem;
     border: 1px solid #0000005b;
-    max-width: 800px;
-    margin: 5vh 0;
     border-radius: 1rem;
     box-shadow: 1rem 1rem 15px #000000c5;
 
